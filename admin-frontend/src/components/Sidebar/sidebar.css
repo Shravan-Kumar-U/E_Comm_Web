@@ -1,0 +1,97 @@
+.sidebar {
+    width: var(--sidebar-w);
+    background: var(--bg-surface-solid);
+    height: 100vh;
+    position: fixed;
+    border-right: 1px solid var(--border-glass);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+}
+
+.sidebar-logo {
+    padding: 40px 32px;
+    font-size: 26px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px var(--primary-glow);
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 12px;
+}
+
+.sidebar-link {
+    padding: 16px 24px;
+    font-weight: 500;
+    color: var(--text-muted);
+    border-radius: var(--radius-md);
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-link::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; height: 100%; width: 4px;
+    background: var(--primary);
+    transform: scaleY(0);
+    transition: var(--transition-smooth);
+    border-radius: 0 4px 4px 0;
+}
+
+.sidebar-link:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: white;
+    transform: translateX(6px);
+}
+
+.sidebar-link:hover::before {
+    transform: scaleY(1);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        border-right: none;
+        border-top: 1px solid var(--border-glass);
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+    }
+    .sidebar-logo {
+        display: none; /* Hide logo on mobile to save space */
+    }
+    .sidebar-links {
+        flex-direction: row;
+        padding: 0;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+    .sidebar-link {
+        padding: 10px;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 11px;
+        text-align: center;
+    }
+    .sidebar-link::before {
+        display: none;
+    }
+    .sidebar-link:hover {
+        transform: translateY(-4px);
+    }
+}

@@ -1,0 +1,42 @@
+:root {
+  /* Colors */
+  --primary-color: #2874f0; /* Flipkart Blue */
+  --primary-hover: #1c5ecc;
+  --secondary-color: #fb641b; /* Flipkart Orange */
+  --background-color: #f1f3f6;
+  --sidebar-bg: #ffffff;
+  --surface-color: #ffffff;
+  
+  /* Text */
+  --text-main: #212121;
+  --text-muted: #878787;
+  --text-light: #ffffff;
+  
+  /* States & Borders */
+  --border-color: #e0e0e0;
+  --border-light: #f0f0f0;
+  --danger-color: #ff6161;
+  --danger-hover: #ff4a4a;
+  --success-color: #388e3c;
+  --warning-color: #ff9f00;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Layout & Shadows */
+  --sidebar-width: 260px;
+  --navbar-height: 64px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+}

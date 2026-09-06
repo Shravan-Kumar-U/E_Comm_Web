@@ -1,0 +1,118 @@
+.navbar {
+    background-color: var(--primary);
+    height: var(--nav-height);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+.nav-logo span {
+    font-size: 11px;
+    font-style: italic;
+    color: #ffe500;
+    font-weight: 500;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 550px;
+    display: flex;
+    background: white;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    height: 36px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.23);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 0 16px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 0 16px;
+    background: white;
+    color: var(--primary);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-btn {
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+.nav-btn:hover { opacity: 0.8; }
+.login-btn {
+    background: white;
+    color: var(--primary);
+    padding: 6px 40px;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+}
+.login-btn:hover { opacity: 1; background: #f9f9f9; }
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 12px 0;
+    }
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0 16px;
+    }
+    .nav-logo {
+        font-size: 18px;
+    }
+    .search-bar {
+        order: 3; /* Push to bottom row */
+        width: 100%;
+        max-width: 100%;
+    }
+    .nav-actions {
+        gap: 16px;
+        margin-left: auto;
+    }
+    .nav-btn {
+        font-size: 13px;
+    }
+    .login-btn {
+        padding: 6px 16px;
+    }
+}

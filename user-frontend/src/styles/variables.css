@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    /* Flipkart Signature Colors */
+    --primary: #2874f0;
+    --primary-dark: #1c5ecc;
+    --secondary: #fb641b;
+    --secondary-dark: #e05411;
+    --accent-green: #388e3c;
+    --accent-red: #ff6161;
+    
+    /* Backgrounds & Surfaces */
+    --bg-main: #f1f3f6;
+    --bg-surface: #ffffff;
+    --bg-footer: #172337;
+    
+    /* Text Colors */
+    --text-dark: #212121;
+    --text-muted: #878787;
+    --text-light: #ffffff;
+    
+    /* Borders & Dividers */
+    --border-color: #f0f0f0;
+    --border-dark: #e0e0e0;
+    
+    /* UI Elements */
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 3px 16px 0 rgba(0, 0, 0, 0.11);
+    
+    /* Layout */
+    --nav-height: 56px;
+    --max-width: 1248px;
+    --transition: all 0.2s ease-in-out;
+}

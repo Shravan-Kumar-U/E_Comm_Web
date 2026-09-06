@@ -1,0 +1,112 @@
+.gallery-container {
+    display: flex;
+    gap: 16px;
+    position: sticky;
+    top: 80px;
+}
+
+.thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 64px;
+}
+
+.thumbnail {
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--border-dark);
+    padding: 4px;
+    cursor: pointer;
+    background: white;
+}
+
+.thumbnail:hover, .thumbnail.active {
+    border-color: var(--primary);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.main-image-container {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    background: white;
+    padding: 24px;
+}
+
+.main-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.btn-action {
+    flex: 1;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+}
+
+.btn-cart { background: #ff9f00; }
+.btn-buy { background: #fb641b; }
+
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column-reverse;
+        position: relative;
+        top: 0;
+    }
+    .thumbnail-list {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        padding: 8px 16px;
+    }
+    .thumbnail {
+        flex: 0 0 50px;
+        height: 50px;
+    }
+    .main-image-container {
+        height: 350px;
+        border-left: none;
+        border-right: none;
+    }
+    .action-buttons {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        z-index: 100;
+        background: white;
+        padding: 8px;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        gap: 8px;
+    }
+    .btn-action {
+        padding: 14px;
+        font-size: 14px;
+    }
+}

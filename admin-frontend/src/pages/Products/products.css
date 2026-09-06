@@ -1,0 +1,88 @@
+.products-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 40px; 
+}
+
+.products-header h2 { 
+    font-size: 32px; 
+    font-weight: 700; 
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.table-wrapper { 
+    overflow-x: auto; 
+    border-radius: var(--radius-lg); 
+    background: var(--bg-surface);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+}
+
+.products-table { width: 100%; border-collapse: collapse; }
+
+.products-table th { 
+    background: rgba(0, 0, 0, 0.2); 
+    color: var(--text-muted); 
+    font-size: 13px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    padding: 20px 24px; 
+    text-align: left; 
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.products-table td { 
+    padding: 24px; 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+    font-weight: 500; 
+    vertical-align: middle; 
+    transition: var(--transition-smooth);
+}
+
+.products-table tr { transition: var(--transition-smooth); }
+.products-table tr:hover { background: rgba(255, 255, 255, 0.03); }
+.products-table tr:hover td { transform: scale(1.01); }
+
+/* Avatar Stack */
+.image-stack { display: flex; align-items: center; }
+.stacked-thumb { 
+    width: 54px; height: 54px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 2px solid var(--bg-surface-solid); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5); 
+    transition: var(--transition-smooth);
+}
+.stacked-thumb:not(:first-child) { margin-left: -24px; }
+.stacked-thumb:hover { transform: translateY(-6px) scale(1.15); z-index: 10; border-color: var(--primary); }
+
+.more-images-badge { 
+    width: 44px; height: 44px; 
+    border-radius: 50%; 
+    background: var(--bg-surface-solid); 
+    display: flex; justify-content: center; align-items: center; 
+    font-size: 13px; font-weight: 700; 
+    margin-left: -20px; 
+    border: 2px solid var(--border-glass); 
+    color: var(--primary);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .products-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    .products-header h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+    .products-header .btn {
+        justify-content: center;
+    }
+}
