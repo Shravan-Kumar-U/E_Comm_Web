@@ -10,10 +10,35 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: [process.env.ADMIN_FRONTEND_URL, process.env.USER_FRONTEND_URL, "https://e-comm-web-users.vercel.app/", "https://e-comm-web-neon.vercel.app"],
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like Postman or mobile apps)
+        if (!origin) return callback(null, true);
+        
+        // Normalize the origin by removing any trailing slash just in case
+        const cleanOrigin = origin.replace(/\/$/, '');
+        
+        const allowedOrigins = [
+            "https://e-comm-web-users.vercel.app",
+            "https://e-comm-web-neon.vercel.app",
+            "http://localhost:5173",
+            "http://localhost:5174"
+        ];
+
+        // If the normalized origin is in the list, allow it
+        if (allowedOrigins.includes(cleanOrigin)) {
+            return callback(null, true);
+        }
+        
+        // Log exactly what is being blocked in Render logs for future debugging
+        console.error("CORS BLOCKED Origin:", origin);
+        return callback(new Error('CORS policy violation'), false);
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
+
+// CRITICAL: Explicitly handle preflight requests for all routes
+app.options('*', cors());
 
 app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'success', message: 'API is running smoothly!' });
