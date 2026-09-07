@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: [process.env.ADMIN_FRONTEND_URL, process.env.USER_FRONTEND_URL],
+    origin: [process.env.ADMIN_FRONTEND_URL, process.env.USER_FRONTEND_URL, "https://e-comm-web-users.vercel.app/", "https://e-comm-web-neon.vercel.app"],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
