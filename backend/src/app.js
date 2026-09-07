@@ -38,7 +38,7 @@ app.use(cors({
 }));
 
 // CRITICAL: Explicitly handle preflight requests for all routes
-app.options('*', cors());
+app.options(/(.*)/, cors());
 
 app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'success', message: 'API is running smoothly!' });
